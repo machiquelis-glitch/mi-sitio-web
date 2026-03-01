@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi Página Interactiva</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Eres la elegida para Jhoan?</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Conoce a mi amigo Jhoan</h1>
-    <button onclick="saludar()">Haz clic</button>
 
-    <script>
-        function saludar() {
-            alert("Es muy buena persona");
-        }
-    </script>
+    <header>
+        <h1>Conoce a mi amigo Jhoan 🚀</h1>
+        <p>El soltero más codiciado de la programación.</p>
+    </header>
+
+    <main>
+        <section id="galeria">
+            <h2>Un poco de él...</h2>
+            <div class="foto-placeholder">
+                <img src="https://via.placeholder.com/250" alt="Foto de Jhoan">
+                <p>(Aquí pondrás la foto de Jhoan más adelante)</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="test">
+            <h2>¿Cuánto sabes de él? (Puzzle nivel 1)</h2>
+            <p>¿Cuál es el hobby favorito de Jhoan?</p>
+            <button onclick="verificarRespuesta('videojuegos')">Jugar Videojuegos</button>
+            <button onclick="verificarRespuesta('leer')">Leer Poesía</button>
+            <button onclick="verificarRespuesta('gym')">Ir al Gym</button>
+            
+            <p id="resultado-test"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
 
