@@ -170,3 +170,22 @@ footer {
 
 .nav-item.active { color: #FF5A1F; }
 .nav-item span { font-size: 1.8rem; margin-bottom: 3px; }
+/* ESTILOS DEL BOTÓN DE INSTAGRAM */
+#btn-ig {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    padding: 16px 30px;
+    border-radius: 18px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: transform 0.2s;
+}
+
+#btn-ig:hover {
+    transform: scale(1.05);
+}
