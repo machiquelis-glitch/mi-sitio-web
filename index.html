@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <div id="marcador-puntos">💖 Puntos: <span id="puntos">0</span></div>
+        <div id="marcador-puntos">💖 Puntos: <span id="puntos">0</span> / 200</div>
         <h1>Jhoan 🔥</h1>
         <p>CONOCE AL SOLTERO MÁS CODICIADO 🚀</p>
     </header>
@@ -30,24 +30,79 @@
         </div>
 
         <div id="pantalla-puzzles" style="display: none;">
-            <section class="tarjeta" id="test">
-                <h2>PUZZLE NIVEL 1</h2>
-                <h3>¿Cuánto sabes de él?</h3>
+            
+            <section class="tarjeta">
+                <h2>PREGUNTA 1 (20 pts)</h2>
                 <p>¿Cuál es su pasatiempo favorito?</p>
-                <button class="btn-opcion" onclick="verificarRespuesta('videojuegos', this)">Jugar Videojuegos</button>
-                <button class="btn-opcion" onclick="verificarRespuesta('leer', this)">Leer Poesía</button>
-                <button class="btn-opcion" onclick="verificarRespuesta('gym', this)">Ir al Gym</button>
-                <p id="resultado-test" class="mensaje-resultado"></p>
+                <button class="btn-opcion" onclick="responder(1, 'videojuegos', 'gym', 20, this)">Jugar Videojuegos</button>
+                <button class="btn-opcion" onclick="responder(1, 'leer', 'gym', 20, this)">Leer Poesía</button>
+                <button class="btn-opcion" onclick="responder(1, 'gym', 'gym', 20, this)">Ir al Gym</button>
+                <p id="res-1" class="mensaje-resultado"></p>
             </section>
 
-            <section class="tarjeta" id="puzzle-texto">
-                <h2>PUZZLE NIVEL 2</h2>
-                <h3>La contraseña secreta</h3>
-                <p>¿Cuál es la película favorita de Jhoan?</p>
-                <input type="text" id="input-palabra" placeholder="Escribe aquí...">
-                <button id="btn-comprobar" onclick="verificarPalabra()">Comprobar</button>
-                <p id="resultado-palabra" class="mensaje-resultado"></p>
+            <section class="tarjeta">
+                <h2>PREGUNTA 2 (20 pts)</h2>
+                <p>¿Cuál es el número de la suerte de Jhoan?</p>
+                <button class="btn-opcion" onclick="responder(2, '13', '7', 20, this)">El 13</button>
+                <button class="btn-opcion" onclick="responder(2, '7', '7', 20, this)">El 7</button>
+                <button class="btn-opcion" onclick="responder(2, '21', '7', 20, this)">El 21</button>
+                <p id="res-2" class="mensaje-resultado"></p>
             </section>
+
+            <section class="tarjeta">
+                <h2>PREGUNTA 3 (35 pts) - ¡Nivel Difícil!</h2>
+                <p>Si pudiera elegir cualquier marca de carro, ¿cuál sería?</p>
+                <button class="btn-opcion" onclick="responder(3, 'ferrari', 'koenigsegg', 35, this)">Ferrari</button>
+                <button class="btn-opcion" onclick="responder(3, 'koenigsegg', 'koenigsegg', 35, this)">Koenigsegg</button>
+                <button class="btn-opcion" onclick="responder(3, 'bugatti', 'koenigsegg', 35, this)">Bugatti</button>
+                <p id="res-3" class="mensaje-resultado"></p>
+            </section>
+
+            <section class="tarjeta">
+                <h2>PREGUNTA 4 (15 pts)</h2>
+                <p>Adivina su color favorito:</p>
+                <button class="btn-opcion" onclick="responder(4, 'azul', 'negro', 15, this)">Azul</button>
+                <button class="btn-opcion" onclick="responder(4, 'rojo', 'negro', 15, this)">Rojo</button>
+                <button class="btn-opcion" onclick="responder(4, 'negro', 'negro', 15, this)">Negro</button>
+                <p id="res-4" class="mensaje-resultado"></p>
+            </section>
+
+            <section class="tarjeta">
+                <h2>PREGUNTA 5 (25 pts)</h2>
+                <p>¿De qué país es originario?</p>
+                <button class="btn-opcion" onclick="responder(5, 'colombia', 'venezuela', 25, this)">Colombia</button>
+                <button class="btn-opcion" onclick="responder(5, 'mexico', 'venezuela', 25, this)">México</button>
+                <button class="btn-opcion" onclick="responder(5, 'venezuela', 'venezuela', 25, this)">Venezuela</button>
+                <p id="res-5" class="mensaje-resultado"></p>
+            </section>
+
+            <section class="tarjeta">
+                <h2>PREGUNTA 6 (25 pts)</h2>
+                <p>¿A qué país sueña con viajar algún día?</p>
+                <button class="btn-opcion" onclick="responder(6, 'japon', 'japon', 25, this)">Japón</button>
+                <button class="btn-opcion" onclick="responder(6, 'italia', 'japon', 25, this)">Italia</button>
+                <button class="btn-opcion" onclick="responder(6, 'australia', 'japon', 25, this)">Australia</button>
+                <p id="res-6" class="mensaje-resultado"></p>
+            </section>
+
+            <section class="tarjeta">
+                <h2>PREGUNTA 7 (35 pts) - ¡Nivel Difícil!</h2>
+                <p>¿A qué se dedica Jhoan?</p>
+                <button class="btn-opcion" onclick="responder(7, 'programador', 'tornero', 35, this)">Programador</button>
+                <button class="btn-opcion" onclick="responder(7, 'tornero', 'tornero', 35, this)">Tornero</button>
+                <button class="btn-opcion" onclick="responder(7, 'mecanico', 'tornero', 35, this)">Mecánico</button>
+                <p id="res-7" class="mensaje-resultado"></p>
+            </section>
+
+            <section class="tarjeta">
+                <h2>PREGUNTA 8 (25 pts)</h2>
+                <p>¿Cuál es el deporte de sus amores?</p>
+                <button class="btn-opcion" onclick="responder(8, 'baloncesto', 'futbol', 25, this)">Baloncesto</button>
+                <button class="btn-opcion" onclick="responder(8, 'beisbol', 'futbol', 25, this)">Béisbol</button>
+                <button class="btn-opcion" onclick="responder(8, 'futbol', 'futbol', 25, this)">Fútbol</button>
+                <p id="res-8" class="mensaje-resultado"></p>
+            </section>
+
         </div>
     </main>
 
