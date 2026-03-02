@@ -1,35 +1,205 @@
+/* RESETEO BÁSICO Y TIPOGRAFÍA MODERNA */
+* {
+    box-sizing: border-radius; /* Ayuda con el diseño de cajas */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipo de letra moderno y limpio */
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f8ff; /* Azul clarito */
-    text-align: center;
+    background-color: #FBFBFC; /* Fondo muy claro, casi blanco, para resaltar las tarjetas */
     color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo horizontalmente */
+    min-height: 100vh;
+    padding-bottom: 80px; /* Espacio para que el menú de abajo no tape contenido */
 }
 
+/* HEADER CON DEGRADADO NARANJA */
 header {
-    background: #ff4d4d; /* Rojo pasión */
+    background: linear-gradient(135deg, #FF6600, #FFCC99); /* Degradado del mockup */
     color: white;
-    padding: 20px;
-    border-radius: 0 0 20px 20px;
+    width: 100%;
+    max-width: 480px; /* Limita el ancho máximo para simular pantalla de celular */
+    padding: 30px 20px;
+    border-radius: 0 0 35px 35px; /* Bordes redondeados súper grandes en la parte inferior */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2); /* Sombra suave de color */
+    position: relative;
+    margin-bottom: 25px;
 }
 
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+/* ESTILOS DE TARJETA (CARD) */
+main {
+    width: 100%;
+    max-width: 440px; /* Ligeramente más angosto que el header para que se vea la sombra */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre secciones */
+    padding: 0 15px;
+}
+
+/* Sección Galería y Test encapsuladas en tarjetas */
+#galeria, #test {
+    background-color: white;
+    border-radius: 25px; /* Bordes muy redondeados */
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); /* Sombra suave y elegante */
+    text-align: center;
+}
+
+/* Etiquetas (Tags) como "UN POCO DE ÉL..." */
+h2 {
+    background-color: #FFE5D0; /* Fondo melocotón muy claro */
+    color: #FF5A1F; /* Texto naranja oscuro */
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Pregunta del test */
+h3 {
+    font-size: 1.6rem;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+}
+
+/* Subtítulos de pregunta */
+#test p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* ESTILOS DE BOTONES */
 button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+    width: 100%; /* Botones de ancho completo dentro de su contenedor */
+    max-width: 320px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
-    transition: 0.3s;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-button:hover {
-    background-color: #45a049;
-    transform: scale(1.1);
+/* Botón de Acción Principal ("¡Revelar foto!") */
+#btn-revelar {
+    background-color: #FF5A1F; /* Naranja vibrante */
+    color: white;
+    padding: 16px 30px;
+    border-radius: 18px;
+    margin-top: 15px;
 }
 
-.foto-placeholder img {
-    border: 5px solid white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-radius: 10px;
+#btn-revelar:hover {
+    background-color: #E04E19;
+    transform: translateY(-2px);
+}
+
+/* Botones de Opciones del Test ("Jugar Videojuegos") */
+#test button {
+    background-color: #F5F5F7; /* Gris muy claro */
+    color: #1A1A1A;
+    padding: 18px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    text-align: left; /* Texto alineado a la izquierda */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#test button:hover {
+    background-color: #EDF3FE; /* Tinte azul muy suave al pasar el mouse */
+    color: #007AFF; /* Color azul moderno de Apple */
+    transform: translateX(3px); /* Pequeño movimiento hacia la derecha */
+}
+
+/* ESTILO DEL PLACEHOLDER DE FOTO CON LÍNEA DISCONTINUA */
+.foto-placeholder {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    border: 2px dashed #FFE5D0; /* Línea discontinua color melocotón */
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px auto;
+    background-color: white;
+}
+
+/* Icono de Candado y Texto "CONTENIDO VIP" */
+#locked-placeholder {
+    color: #FF8550; /* Color melocotón oscuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Simulación de icono con emoji */
+#locked-placeholder span {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+/* Texto de resultado (correcto/incorrecto) */
+#resultado-test {
+    font-weight: 700;
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+/* MENÚ DE NAVEGACIÓN INFERIOR (FOOTER) */
+footer {
+    position: fixed; /* Fijo en la parte inferior */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #F0F0F0;
+    display: flex;
+    justify-content: space-around; /* Iconos distribuidos uniformemente */
+    align-items: center;
+    padding: 15px 0;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.03); /* Sombra suave hacia arriba */
+    z-index: 100;
+}
+
+.nav-item {
+    text-align: center;
+    text-decoration: none;
+    color: #BBBBBB; /* Color gris suave por defecto */
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Icono del Perfil seleccionado (Perfil) */
+.nav-item.active {
+    color: #FF5A1F; /* Color naranja activo */
+}
+
+/* Simulación de iconos con emojis */
+.nav-item span {
+    font-size: 1.8rem;
+    margin-bottom: 3px;
 }
