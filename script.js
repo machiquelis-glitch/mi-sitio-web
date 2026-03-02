@@ -57,7 +57,7 @@ function verificarPalabra() {
     const resultado = document.getElementById("resultado-palabra");
     
     // CAMBIA 'shrek' POR LA PELÍCULA REAL DE JHOAN (escríbela toda en minúsculas)
-    if (input === 'shrek') {
+    if (input === 'Airon man') {
         resultado.innerText = "¡Excelente! Conoces sus gustos. 🎬 +20 puntos. ✅";
         resultado.style.color = "#00C853";
         sumarPuntos(20);
