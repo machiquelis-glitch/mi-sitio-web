@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Eres la elegida para Jhoan?</title>
+    <title>Jhoan 🔥 | El soltero más codiciado</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Conoce a mi amigo Jhoan 🚀</h1>
-        <p>El soltero más codiciado de la programación.</p>
+        <h1>Jhoan 🔥</h1>
+        <p>CONOCE AL SOLTERO MÁS CODICIADO 🚀</p>
     </header>
 
     <main>
         <section id="galeria">
-            <h2>Un poco de él...</h2>
+            <h2>UN POCO DE ÉL...</h2>
+            
             <div class="foto-placeholder">
-                <button id="btn-revelar" onclick="mostrarFoto()">¡Revelar foto de Jhoan! 🙈</button>
                 
-                <img id="foto-secreta" src="Jhoan.jpg" alt="Foto de Jhoan" style="display: none; width: 250px; margin-top: 15px;">
+                <div id="locked-placeholder">
+                    <span>🔒</span> <p>CONTENIDO VIP</p>
+                </div>
+                
+                <img id="foto-secreta" src="Jhoan.jpg" alt="Foto de Jhoan" style="display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 25px;">
             </div>
+
+            <button id="btn-revelar" onclick="mostrarFoto()">¡Revelar foto! 🙊</button>
         </section>
 
-        <hr>
-
         <section id="test">
-            <h2>¿Cuánto sabes de él? (Puzzle nivel 1)</h2>
+            <h2>PUZZLE NIVEL 1</h2>
+            <h3>¿Cuánto sabes de él?</h3>
             <p>¿Cuál es el hobby favorito de Jhoan?</p>
+            
             <button onclick="verificarRespuesta('videojuegos')">Jugar Videojuegos</button>
             <button onclick="verificarRespuesta('leer')">Leer Poesía</button>
             <button onclick="verificarRespuesta('gym')">Ir al Gym</button>
@@ -36,9 +42,21 @@
         </section>
     </main>
 
+    <footer>
+        <a href="#" class="nav-item active">
+            <span>👤</span>
+            <p>PERFIL</p>
+        </a>
+        <a href="#" class="nav-item">
+            <span>🧩</span>
+            <p>PUZZLES</p>
+        </a>
+        <a href="#" class="nav-item">
+            <span>💬</span>
+            <p>CHAT</p>
+        </a>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
