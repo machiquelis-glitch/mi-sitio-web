@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhoan 🔥 | El soltero más codiciado</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
@@ -104,6 +105,18 @@
             </section>
 
         </div>
+
+        <div id="pantalla-chat" style="display: none;">
+            <section class="tarjeta">
+                <h2>CONTACTA CON ÉL 💌</h2>
+                <p>¿Lograste los 200 puntos o simplemente no puedes esperar para hablarle?</p>
+                <p>¡Mándale un mensaje directo a su Instagram y dile que vienes de su App VIP!</p>
+                
+                <a href="https://instagram.com/tu_usuario" target="_blank" id="btn-ig">
+                    <span style="font-size: 1.5rem; margin-right: 10px;">📸</span> Ir a su Instagram
+                </a>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -115,7 +128,7 @@
             <span>🧩</span>
             <p>PUZZLES</p>
         </a>
-        <a href="#" class="nav-item">
+        <a href="#" class="nav-item" id="btn-nav-chat" onclick="cambiarPantalla('chat')">
             <span>💬</span>
             <p>CHAT</p>
         </a>
