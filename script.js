@@ -1,7 +1,7 @@
 function verificarRespuesta(opcion) {
     const resultado = document.getElementById("resultado-test");
     
-    if (opcion === 'Ir al Gym') {
+    if (opcion === 'videojuegos') {
         resultado.innerText = "¡Correcto! Ya tienes 10 puntos de novia. ✅";
         resultado.style.color = "green";
     } else {
