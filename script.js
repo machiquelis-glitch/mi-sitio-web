@@ -1,7 +1,6 @@
-// Variable para llevar la cuenta de los puntos
 let puntosTotales = 0;
-let nivel1Completado = false;
-let nivel2Completado = false;
+// Esta lista nos ayuda a saber qué preguntas ya respondió bien para no darle puntos infinitos
+let preguntasResueltas = [false, false, false, false, false, false, false, false, false]; 
 
 // 1. Mostrar la foto de Jhoan
 function mostrarFoto() {
@@ -30,52 +29,42 @@ function cambiarPantalla(pantalla) {
     }
 }
 
-// 3. Puzzle 1: El Gym
-function verificarRespuesta(opcion, botonPresionado) {
-    if (nivel1Completado) return; // Si ya lo pasó, no puede volver a sumar puntos
+// 3. ¡LA SÚPER FUNCIÓN PARA TODAS LAS PREGUNTAS!
+function responder(numPregunta, seleccion, correcta, puntos, boton) {
+    // Si ya acertó esta pregunta antes, no hacemos nada
+    if (preguntasResueltas[numPregunta]) return;
 
-    const resultado = document.getElementById("resultado-test");
-    
-    if (opcion === 'gym') { 
-        resultado.innerText = "¡Correcto! 💪 +10 puntos. ✅";
+    const resultado = document.getElementById("res-" + numPregunta);
+
+    if (seleccion === correcta) {
+        resultado.innerText = "¡Correcto! +" + puntos + " puntos. ✅";
         resultado.style.color = "#00C853";
-        botonPresionado.style.backgroundColor = "#E8F5E9"; // Se pone verdecito
-        botonPresionado.style.color = "#00C853";
-        sumarPuntos(10);
-        nivel1Completado = true;
+        boton.style.backgroundColor = "#E8F5E9"; 
+        boton.style.color = "#00C853";
+        
+        sumarPuntos(puntos);
+        preguntasResueltas[numPregunta] = true; // Bloquea la pregunta para que no sume más
     } else {
-        resultado.innerText = "Uy, casi. Pero no. Inténtalo de nuevo. ❌";
+        resultado.innerText = "Uy, no. ¡Sigue intentando! ❌";
         resultado.style.color = "#FF1744";
     }
 }
 
-// 4. Puzzle 2: La Palabra Secreta
-function verificarPalabra() {
-    if (nivel2Completado) return; // Si ya lo pasó, no suma más puntos
-
-    const input = document.getElementById("input-palabra").value.toLowerCase().trim();
-    const resultado = document.getElementById("resultado-palabra");
-    
-    // CAMBIA 'shrek' POR LA PELÍCULA REAL DE JHOAN (escríbela toda en minúsculas)
-    if (input === 'Airon man') {
-        resultado.innerText = "¡Excelente! Conoces sus gustos. 🎬 +20 puntos. ✅";
-        resultado.style.color = "#00C853";
-        sumarPuntos(20);
-        nivel2Completado = true;
-    } else {
-        resultado.innerText = "Esa no es... ¡Piensa bien! ❌";
-        resultado.style.color = "#FF1744";
-    }
-}
-
-// 5. Función para sumar puntos y mostrarlos arriba
+// 4. Sumar puntos y actualizar el marcador
 function sumarPuntos(cantidad) {
     puntosTotales = puntosTotales + cantidad;
     document.getElementById("puntos").innerText = puntosTotales;
     
-    // Pequeño efecto visual al ganar puntos
+    // Efecto visual de rebote
     document.getElementById("marcador-puntos").style.transform = "scale(1.2)";
     setTimeout(() => {
         document.getElementById("marcador-puntos").style.transform = "scale(1)";
     }, 300);
+
+    // Si llega a 200 puntos...
+    if (puntosTotales === 200) {
+        setTimeout(() => {
+            alert("¡INCREÍBLE! Obtuviste los 200 puntos. ¡Eres la candidata perfecta para Jhoan! 🎉🔥");
+        }, 500);
+    }
 }
