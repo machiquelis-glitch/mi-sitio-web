@@ -1,96 +1,92 @@
-/* RESETEO BÁSICO Y TIPOGRAFÍA MODERNA */
 * {
-    box-sizing: border-radius; /* Ayuda con el diseño de cajas */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipo de letra moderno y limpio */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #FBFBFC; /* Fondo muy claro, casi blanco, para resaltar las tarjetas */
+    background-color: #FBFBFC;
     color: #333;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra todo horizontalmente */
+    align-items: center;
     min-height: 100vh;
-    padding-bottom: 80px; /* Espacio para que el menú de abajo no tape contenido */
+    padding-bottom: 90px;
 }
 
-/* HEADER CON DEGRADADO NARANJA */
+/* HEADER Y MARCADOR */
 header {
-    background: linear-gradient(135deg, #FF6600, #FFCC99); /* Degradado del mockup */
+    background: linear-gradient(135deg, #FF6600, #FFCC99);
     color: white;
     width: 100%;
-    max-width: 480px; /* Limita el ancho máximo para simular pantalla de celular */
-    padding: 30px 20px;
-    border-radius: 0 0 35px 35px; /* Bordes redondeados súper grandes en la parte inferior */
+    max-width: 480px;
+    padding: 40px 20px 30px 20px;
+    border-radius: 0 0 35px 35px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2); /* Sombra suave de color */
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
     position: relative;
     margin-bottom: 25px;
 }
 
-header h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
+#marcador-puntos {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #FF5A1F;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
-}
+header h1 { font-size: 2.8rem; font-weight: 800; }
+header p { font-size: 1.1rem; opacity: 0.9; letter-spacing: 0.5px; }
 
-/* ESTILOS DE TARJETA (CARD) */
 main {
     width: 100%;
-    max-width: 440px; /* Ligeramente más angosto que el header para que se vea la sombra */
+    max-width: 440px;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espacio entre secciones */
+    gap: 20px;
     padding: 0 15px;
 }
 
-/* Sección Galería y Test encapsuladas en tarjetas */
-#galeria, #test {
+/* TARJETAS */
+.tarjeta {
     background-color: white;
-    border-radius: 25px; /* Bordes muy redondeados */
+    border-radius: 25px;
     padding: 25px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); /* Sombra suave y elegante */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
     text-align: center;
+    margin-bottom: 20px;
+    animation: aparecer 0.4s ease-out;
 }
 
-/* Etiquetas (Tags) como "UN POCO DE ÉL..." */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 h2 {
-    background-color: #FFE5D0; /* Fondo melocotón muy claro */
-    color: #FF5A1F; /* Texto naranja oscuro */
+    background-color: #FFE5D0;
+    color: #FF5A1F;
     display: inline-block;
     padding: 8px 18px;
     border-radius: 20px;
     font-size: 1rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
     margin-bottom: 20px;
-    text-transform: uppercase;
 }
 
-/* Pregunta del test */
-h3 {
-    font-size: 1.6rem;
-    color: #1A1A1A;
-    margin-bottom: 10px;
-}
+h3 { font-size: 1.5rem; color: #1A1A1A; margin-bottom: 10px; }
+.tarjeta p { color: #666; margin-bottom: 20px; }
 
-/* Subtítulos de pregunta */
-#test p {
-    color: #666;
-    margin-bottom: 25px;
-}
-
-/* ESTILOS DE BOTONES */
+/* BOTONES E INPUTS */
 button {
-    width: 100%; /* Botones de ancho completo dentro de su contenedor */
-    max-width: 320px;
+    width: 100%;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -98,108 +94,79 @@ button {
     font-size: 1.1rem;
 }
 
-/* Botón de Acción Principal ("¡Revelar foto!") */
-#btn-revelar {
-    background-color: #FF5A1F; /* Naranja vibrante */
+#btn-revelar, #btn-comprobar {
+    background-color: #FF5A1F;
     color: white;
     padding: 16px 30px;
     border-radius: 18px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
-#btn-revelar:hover {
-    background-color: #E04E19;
-    transform: translateY(-2px);
-}
-
-/* Botones de Opciones del Test ("Jugar Videojuegos") */
-#test button {
-    background-color: #F5F5F7; /* Gris muy claro */
+.btn-opcion {
+    background-color: #F5F5F7;
     color: #1A1A1A;
     padding: 18px;
     border-radius: 18px;
     margin-bottom: 15px;
-    text-align: left; /* Texto alineado a la izquierda */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
 }
 
-#test button:hover {
-    background-color: #EDF3FE; /* Tinte azul muy suave al pasar el mouse */
-    color: #007AFF; /* Color azul moderno de Apple */
-    transform: translateX(3px); /* Pequeño movimiento hacia la derecha */
+input[type="text"] {
+    width: 100%;
+    padding: 18px;
+    border-radius: 18px;
+    border: 2px solid #F5F5F7;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    outline: none;
+    transition: 0.3s;
 }
 
-/* ESTILO DEL PLACEHOLDER DE FOTO CON LÍNEA DISCONTINUA */
+input[type="text"]:focus {
+    border-color: #FF5A1F;
+}
+
+/* FOTO PLACEHOLDER */
 .foto-placeholder {
     width: 100%;
     max-width: 250px;
     height: 250px;
-    border: 2px dashed #FFE5D0; /* Línea discontinua color melocotón */
+    border: 2px dashed #FFE5D0;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto 15px auto;
-    background-color: white;
 }
 
-/* Icono de Candado y Texto "CONTENIDO VIP" */
-#locked-placeholder {
-    color: #FF8550; /* Color melocotón oscuro */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+#locked-placeholder span { font-size: 4rem; margin-bottom: 10px; }
+.mensaje-resultado { font-weight: 700; margin-top: 15px; font-size: 1.1rem; }
 
-/* Simulación de icono con emoji */
-#locked-placeholder span {
-    font-size: 4rem;
-    margin-bottom: 10px;
-}
-
-/* Texto de resultado (correcto/incorrecto) */
-#resultado-test {
-    font-weight: 700;
-    margin-top: 15px;
-    font-size: 1.1rem;
-}
-
-/* MENÚ DE NAVEGACIÓN INFERIOR (FOOTER) */
+/* MENÚ INFERIOR */
 footer {
-    position: fixed; /* Fijo en la parte inferior */
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: white;
     border-top: 1px solid #F0F0F0;
     display: flex;
-    justify-content: space-around; /* Iconos distribuidos uniformemente */
-    align-items: center;
+    justify-content: space-around;
     padding: 15px 0;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.03); /* Sombra suave hacia arriba */
     z-index: 100;
 }
 
 .nav-item {
     text-align: center;
     text-decoration: none;
-    color: #BBBBBB; /* Color gris suave por defecto */
+    color: #BBBBBB;
     font-size: 0.9rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.3s;
 }
 
-/* Icono del Perfil seleccionado (Perfil) */
-.nav-item.active {
-    color: #FF5A1F; /* Color naranja activo */
-}
-
-/* Simulación de iconos con emojis */
-.nav-item span {
-    font-size: 1.8rem;
-    margin-bottom: 3px;
-}
+.nav-item.active { color: #FF5A1F; }
+.nav-item span { font-size: 1.8rem; margin-bottom: 3px; }
