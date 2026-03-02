@@ -9,3 +9,12 @@ function verificarRespuesta(opcion) {
         resultado.style.color = "red";
     }
 }
+function mostrarFoto() {
+    // Buscamos la foto y el botón en el HTML
+    const foto = document.getElementById("foto-secreta");
+    const boton = document.getElementById("btn-revelar");
+    
+    // Hacemos que la foto aparezca y el botón desaparezca
+    foto.style.display = "inline-block";
+    boton.style.display = "none";
+}
